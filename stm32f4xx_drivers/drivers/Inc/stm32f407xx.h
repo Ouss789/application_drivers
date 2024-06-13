@@ -125,6 +125,79 @@ typedef struct
 
 /*clock enable macros for gpio*/
 
+#define GPIOA_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<0)
+#define GPIOB_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<1)
+#define GPIOC_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<2)
+#define GPIOD_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<3)
+#define GPIOE_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<4)
+#define GPIOF_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<5)
+#define GPIOG_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<6)
+#define GPIOH_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<7)
+#define GPIOI_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<8)
+#define GPIOJ_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<9)
+#define GPIOK_PCLCK_EN()        RCC->RCC_AHB1ENR |=(1<<10)
+
+/*clock enable macros for I2Cx*/
+
+#define I2C1_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<21)
+#define I2C2_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<22)
+#define I2C3_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<23)
+
+/*clock enable macros for SPIx*/
+
+#define SPI1_PCLCK_EN()         RCC->RCC_APB2ENR |=(1<<12)
+#define SPI2_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<14)
+#define SPI3_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<15)
+
+/*clock enable macros for USARTx and UARTx*/
+
+#define USART1_PCLCK_EN()         RCC->RCC_APB2ENR |=(1<<4)
+#define USART2_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<17)
+#define USART3_PCLCK_EN()         RCC->RCC_APB1ENR |=(1<<18)
+#define USART6_PCLCK_EN()         RCC->RCC_APB2ENR |=(1<<5)
+#define UART5_PCLCK_EN()          RCC->RCC_APB1ENR |=(1<<20)
+
+/*CLOCK ENABLE FOR SYSCFGEN: System configuration controller*/
+#define SYSCFGEN_PCLCK_EN()       RCC->RCC_APB2ENR |=(1<<14)
+
+
+
+/*clock desable macros for gpio*/
+
+#define GPIOA_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<0)
+#define GPIOB_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<1)
+#define GPIOC_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<2)
+#define GPIOD_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<3)
+#define GPIOE_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<4)
+#define GPIOF_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<5)
+#define GPIOG_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<6)
+#define GPIOH_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<7)
+#define GPIOI_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<8)
+#define GPIOJ_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<9)
+#define GPIOK_PCLCK_DE()        RCC->RCC_AHB1ENR &=~(1<<10)
+
+/*clock desable macros for I2Cx*/
+
+#define I2C1_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<21)
+#define I2C2_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<22)
+#define I2C3_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<23)
+
+/*clock desable macros for SPIx*/
+
+#define SPI1_PCLCK_DE()         RCC->RCC_APB2ENR &=~(1<<12)
+#define SPI2_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<14)
+#define SPI3_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<15)
+
+/*clock desable macros for USARTx and UARTx*/
+
+#define USART1_PCLCK_DE()         RCC->RCC_APB2ENR &=~(1<<4)
+#define USART2_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<17)
+#define USART3_PCLCK_DE()         RCC->RCC_APB1ENR &=~(1<<18)
+#define USART6_PCLCK_DE()         RCC->RCC_APB2ENR &=~(1<<5)
+#define UART5_PCLCK_DE()          RCC->RCC_APB1ENR &=~(1<<20)
+
+/*CLOCK ENABLE FOR SYSCFGEN: System configuration controller*/
+#define SYSCFGEN_PCLCK_DE()       RCC->RCC_APB2ENR &=~(1<<14)
 
 
 #endif /*INC_STM32F407XX_H_*/
