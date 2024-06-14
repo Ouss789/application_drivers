@@ -33,6 +33,8 @@
 #define GPIOG_BASEADDR          (AHB1PERIPH_BASE+0x18000)
 #define GPIOH_BASEADDR          (AHB1PERIPH_BASE+0x1C000)
 #define GPIOI_BASEADDR          (AHB1PERIPH_BASE+0x20000)
+#define GPIOJ_BASEADDR          (AHB1PERIPH_BASE+0x24000)
+#define GPIOK_BASEADDR          (AHB1PERIPH_BASE+0x28000)
 #define RCC_BASEADDR            (AHB1PERIPH_BASE+3800)
 
 /*Base addresses of pripherals hanging on APB1 bus*/
@@ -119,6 +121,8 @@ typedef struct
 #define GPIOG       ((GPIO_RegDef_t*)GPIOG_BASEADDR)
 #define GPIOH       ((GPIO_RegDef_t*)GPIOH_BASEADDR)
 #define GPIOI       ((GPIO_RegDef_t*)GPIOI_BASEADDR)
+#define GPIOJ       ((GPIO_RegDef_t*)GPIOJ_BASEADDR)
+#define GPIOK       ((GPIO_RegDef_t*)GPIOK_BASEADDR)
 
 
 #define RCC         ((RCC_RegDef_t*)RCC_BASEADDR)
@@ -198,6 +202,16 @@ typedef struct
 
 /*CLOCK ENABLE FOR SYSCFGEN: System configuration controller*/
 #define SYSCFGEN_PCLCK_DE()       RCC->RCC_APB2ENR &=~(1<<14)
+
+/* Some generic macros */
+
+#define ENABLE                  1
+#define DISABLE                 0
+#define SET                     ENABLE
+#define RESET                   DISABLE
+#define GPIO_PIN_SET            SET
+#define GPIO_PIN_RESET          RESET
+
 
 
 #endif /*INC_STM32F407XX_H_*/
